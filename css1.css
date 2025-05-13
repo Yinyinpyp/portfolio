@@ -1,0 +1,1486 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html, body {
+    height: 100%;
+    margin: 0; 
+}
+
+
+
+body {
+
+    background-color: #ffffff;
+    color: #333;
+    font-family: 'Roboto', sans-serif; 
+    
+    
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/path/to/font/MyCustomFont.woff2') format('woff2'),
+         url('/path/to/font/MyCustomFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'MyCustomFont', sans-serif; 
+}
+
+
+
+
+.container {
+    display: grid; 
+    grid-template-columns: 95px 1fr; 
+    height: 100vh; 
+    position: fixed; 
+    top :0;
+    left: 0; 
+    color: #F8F5F5;
+    overflow: auto;
+}
+
+.sidebar {
+    background-color: #f0f0f0; 
+    padding: 30px; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.sidebar a {
+    color: #FFAE58;
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed; 
+    text-decoration: none;
+    top: -10px;
+    z-index: 999999; 
+}
+.anuphan-text {
+  font-family: "Anuphan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; 
+  font-style: normal;
+}
+
+
+
+
+
+
+.logo {
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 20px; 
+    width: 100%;
+    
+}
+
+.main-content {
+    padding: 20px; 
+    overflow: auto; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    right: 80px;
+    width: 100vw;
+    padding: 20px 80px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    overflow-x: hidden;
+  }
+
+  
+  
+  
+
+  
+  
+
+
+  
+  nav h1, nav ul {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  
+  
+  nav h1 {
+    margin: 0;
+    padding: 0 10px;
+    font-family: 'Tuffy', serif;
+    font-size: 30px;
+    color: #f0f0f0;
+    flex: 1; 
+  }
+  
+
+
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #aa7b7b;
+    z-index: 1000;
+    font-size: 30px;
+    padding: 10px 20px;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav h1 {
+  position: relative; 
+  right: 300px;            
+  color: #f0f0f0;
+  font-size: 30px;
+  margin-left: 500px;      
+  padding-left: 0;
+  text-align: left;
+}
+/* เริ่มต้นซ่อน <h1> สำหรับขนาดหน้าจอเล็ก */
+nav h1 {
+  color: #f0f0f0;
+  font-size: 30px;
+  margin-left: 500px;
+  padding-left: 0;
+  text-align: left;
+}
+
+/* ซ่อน <h1> เมื่อหน้าจอเล็กลง */
+@media screen and (max-width: 768px) {
+  nav h1 {
+    display: none; /* ซ่อน <h1> เมื่อหน้าจอขนาดเล็ก */
+  }
+}
+
+/* ปรับระยะห่างของ <li> เมื่อหน้าจอเล็กลง */
+
+
+
+
+
+
+
+
+nav.scrolled {
+    background-color: white;
+    color: #000000;
+}
+
+
+nav a {
+  font-family: 'Tuffy', serif;
+  font-size: 20px;
+  color: #f0f0f0;
+  margin-left: 10px; /* ปรับให้มีระยะห่างที่เหมาะสม */
+}
+
+/* กำหนดรูปแบบพื้นฐานสำหรับ ul */
+ul {
+  display: flex;
+  justify-content: flex-start;  /* ให้เมนูเริ่มจากซ้าย */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow-x: hidden; /* ป้องกันเมนูที่ยืดเกินไป */
+  max-width: 100%;  /* จำกัดความกว้างของ ul ให้ไม่เกินขนาดหน้าจอ */
+}
+
+/* กำหนดรูปแบบสำหรับ li */
+li {
+  margin: 0 10px;
+  transition: margin-left 0.3s ease; /* เพิ่ม transition เพื่อให้การขยับเป็นไปอย่างนุ่มนวล */
+  z-index: 10; /* ให้ li อยู่บนสุดเพื่อให้คลิกได้ */
+}
+
+/* เมื่อหน้าจอเล็กลง (ไม่เกิน 768px) */
+@media screen and (max-width: 768px) {
+  ul {
+    margin-left: 0px;
+    padding-left: 150px;  /* ป้องกันการหลุดจากขอบ */
+  }
+
+  li {
+    margin-left: -10px; /* ขยับไปทางซ้ายมากขึ้น */
+  }
+}
+
+/* เมื่อหน้าจอเล็กลงมาก (ไม่เกิน 480px) */
+@media screen and (max-width: 480px) {
+  ul {
+    justify-content: flex-start; /* เมนูยังคงอยู่ซ้าย */
+    padding-left: -50px;  /* ป้องกันการหลุดจากขอบ */
+  }
+  li {
+    margin-left: -50px; /* ขยับไปทางซ้ายมากขึ้น */
+  }
+  a {
+    margin-left: 50px; /* ปรับระยะห่างให้พอดี */
+  }
+}
+
+/* รูปแบบพื้นฐานสำหรับ a */
+a {
+  text-decoration: none;
+  white-space: nowrap; 
+}
+
+/* รูปแบบสำหรับ a เมื่อ hover */
+a:hover {
+  background-color: #f0f0f0; 
+}
+
+
+
+
+.animated-title {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #333;
+  min-width: 320px; 
+  height: 100px;      
+  margin-left: 0px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 200px;
+  
+}
+
+
+#typewriter {
+  display: inline-block;
+  min-width: 240px;
+  font-size: 50px;
+}
+
+/* ปรับขนาดตัวอักษรให้พอดีกับหน้าจอเล็กลง โดยไม่ใช้ margin-top เยอะ */
+@media screen and (max-width: 768px) {
+  #typewriter .animated-title  {
+    font-size: clamp(15px, 6vw, 40px);
+    min-width: 180px;
+    margin-top: 100px; /* ลดจาก 1000px เหลือแค่พอเหมาะ */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #typewriter {
+    font-size: clamp(11px, 7vw, 35px);
+    min-width: 140px;
+    margin-top: 80px; /* ลดจาก 1300px เหลือแค่พอเหมาะ */
+  }
+}
+
+
+
+
+
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-20px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+
+
+
+.profile-picture {
+    display: flex;
+    justify-content: flex-end; 
+}
+.profile-picture img {
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 90px;
+    top: 190px; 
+  }
+  
+
+
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+}
+.intro img {
+  width: 55%;
+  height: auto;
+  float: left;
+  margin-left: 800px;
+  margin-top: 190px;
+
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  transform: translateX(100px);
+  animation: fadeInSlideRight 1.5s ease-out forwards;
+}
+
+
+
+@keyframes fadeInSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .intro img {
+    width: 120%;
+    margin-left: -100px;  
+    margin-right: auto;
+    float: none;
+    
+  }
+}
+
+
+
+@keyframes fadeInSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+}
+
+
+
+
+
+.intro {
+  max-width: 50%;
+  position: absolute;
+  left: 200px;
+  top: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    left: 100px; /* ลดค่า left เพื่อขยับไปทางซ้าย */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro {
+    left: 20px; /* ลดค่า left ให้มากขึ้นหากหน้าจอเล็กลง */
+  }
+}
+
+
+
+
+
+
+  
+
+
+.intro h2{
+  max-width: 50%;
+  position: absolute;
+  left: 200px; 
+  top: 200px;  
+}
+
+.intro h1 {
+    font-size: 40px;
+    color: #333;
+}
+
+.intro h1 span {
+    color: #aa7b7b;
+}
+@media screen and (max-width: 768px) {
+  .intro h1 {
+    font-size: 20px;  /* ปรับขนาดตัวอักษรให้เล็กลงเมื่อหน้าจอเล็ก */
+    margin-top: 700px; /* เพิ่มระยะห่างจากด้านบน */
+  }
+}
+
+.intro p {
+    font-size: 30px;
+    margin: 10px 0;
+    margin-top: 40px;
+}
+
+.resume-btn {
+    background-color: #aa7b7b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 1000;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+.intro-btn {
+    background-color: #e6e6e6;
+    color: #b68d8d;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 50px; 
+    margin-left: 90px;
+}
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  position: relative; 
+  z-index: 10; 
+}
+
+
+
+.icon-container img {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  margin-top: 15px;
+  padding: 0;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.icon-container a {
+  display: inline-block; 
+}
+
+
+.icon-container img:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 50px) {
+  .icon-container {
+    justify-content: center; 
+  }
+
+  .icon-container img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+}
+
+
+  .icon-container1 img {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    margin-top: 15px;
+    padding: 0;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    border-radius: 8px; 
+    transition: box-shadow 0.3s ease;
+
+    position: relative;
+    z-index: 10;
+
+  }
+  
+
+  
+  
+
+
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #afacaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  color: #595959; 
+  font-weight: bold;
+}
+
+/* สำหรับหน้าจอขนาดเล็ก (มือถือ) */
+@media screen and (max-width: 768px) {
+  .nav-link {
+    font-size: 22px;  
+    margin-left: -10px;/* ปรับขนาดตัวอักษรให้เหมาะสม */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-link {
+    font-size: 18px; 
+    margin-left: 50px; /* ปรับขนาดตัวอักษรเมื่อหน้าจอเล็กลง */
+  }
+}
+
+
+
+  .content {
+    height: 100vh; 
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  
+  
+.seeall {
+    background-color: #DBB5B5;
+    color: #534c4c;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 999px; 
+    top: 50px;
+    margin-left: 90px;
+}
+
+
+.cascadia-mono {
+  
+  font-family: 'Tuffy', serif, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-optical-sizing: auto;
+  margin-left: 10px;
+  transition: margin-top 0.3s ease; /* เพิ่ม transition เพื่อให้การเคลื่อนไหวเนียนขึ้น */
+}
+
+/* เมื่อหน้าจอเล็กลง (เช่น สูงสุดที่ 768px) ให้ขยับข้อความขึ้น */
+@media (max-width: 768px) {
+  .cascadia-mono {
+      margin-top: -500px; /* ปรับตำแหน่งขึ้นจากตำแหน่งเดิม */
+  }
+}
+
+
+  
+
+
+
+
+  
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh; /* ขยายเต็มจอ */
+  object-fit: cover;
+  z-index: -1;
+  display: block;
+  pointer-events: none; /* ป้องกันไม่ให้วิดีโอบังการคลิก */
+}
+
+@media (max-width: 768px) {
+  #video-background {
+    display: none;
+  }
+
+  body {
+    background-color: #e7cfcf;
+  }
+}
+
+  
+
+
+
+
+
+.skills {
+  background-color: rgba(170, 123, 123, 0.7); 
+  padding: 50px 30px;
+  color: #000000;
+  margin-top: 800px;
+  margin-left: 700px;
+  width: 60%;
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+@media (max-width: 768px) {
+  .skills {
+    padding: 30px 20px;
+    font-size: 14px;
+    margin-top: 1150px;  /* ปรับค่าตัวนี้ให้เหมาะสม */
+    margin-left: 20px; /* ปรับระยะห่างซ้าย */
+    width: 100%;  /* ลดขนาดให้เหมาะสม */
+    height: 70%;  /* ปรับความสูงตามเนื้อหาหรือขนาดที่เหมาะสม */
+  }
+}
+
+
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  
+  .skills h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  
+  .skills ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skills li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  .contact-info {
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    background-color: #fff; 
+    padding: 10px 0; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+}
+
+
+
+.contact-info div {
+    margin: 0 15px; 
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  transition: margin-left 0.3s ease; /* เพิ่ม transition เพื่อให้การขยับเป็นไปอย่างนุ่มนวล */
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-left: 70px;
+    margin-top: 20px;
+  }
+
+  nav li, nav a {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  nav ul {
+    margin-left: -10px; /* ขยับไปทางซ้ายมากขึ้น */
+  }
+}
+
+
+nav ul li {
+    display: inline-block;
+    margin-right: 0px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff; 
+  transition: color 0.3s ease;
+}
+/* ระยะห่างระหว่างเมนูปกติ */
+nav ul li {
+  margin: 0 40px; /* ซ้าย-ขวา ห่างกัน 20px */
+}
+
+/* หน้าจอเล็กลง */
+@media screen and (max-width: 768px) {
+  nav ul li {
+    margin: 0 20px; /* ลดระยะห่างลง */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav ul li {
+    margin: 0 20px; /* ยิ่งเล็กลงก็ลดระยะห่างลงอีก */
+  }
+}
+
+
+nav.scrolled ul li a {
+  color: #aa7b7b; 
+}
+
+
+nav ul li a:hover {
+    color: #afacaa; 
+}
+
+
+.animated-title {
+    position: relative;
+    left: 10px;
+    top: 40px;
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.8;
+    animation: fadeInMove 1.5s ease-out;
+}
+
+  
+  @keyframes fadeInMove {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .Service {
+    font-size: 30px; 
+    padding: 100px 40px;
+    background-color: #DBB5B5;
+    margin-bottom: 20px; 
+    text-align: center; 
+    color: #333; 
+    font-weight: bold;
+    font-family: 'Tuffy', serif; 
+  }
+  
+
+  
+  
+
+.Service img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  margin-top: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+@media screen and (max-width: 768px) {
+  .Service {
+    font-size: 20px;         /* ปรับขนาดตัวอักษร */
+    padding: 40px 20px;      /* ปรับระยะห่างให้เล็กลง */
+  }
+
+  .Service img {
+    max-width: 180px;        /* ลดขนาดความกว้างของรูป */
+    margin-top: 20px;        /* ลดระยะห่างด้านบน */
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);  
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);  
+}
+@media screen and (max-width: 768px) {
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(20px); /* หรือปรับค่าอื่น เช่น scale หรือ padding */
+    transition: all 0.6s ease-in-out; /* เพิ่มความนุ่มนวล */
+  }
+}
+
+
+
+.Service img:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
+
+.Service img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
+}
+.skills-container {
+  position: relative;
+  padding-left: 300px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.floating-image {
+  position: absolute;
+  top: 0px;
+  left: -590px;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+.skill {
+  background-color: #dbb5b5b3;
+  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  width: 1000px; 
+  max-width: 1200px; 
+  height: 800px; 
+  margin: 0 auto; 
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 90px;
+
+
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 3, 0.3); 
+}
+@media screen and (max-width: 768px) {
+  .skill {
+    width: 90%;         /* ยืดหยุ่นตามขนาดหน้าจอ */
+    height: auto;       /* ให้สูงตามเนื้อหา */
+    padding: 15px;
+    margin-top: 40px;
+  }
+}
+
+
+
+
+.skills-container {
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  opacity: 0;
+  transform: translateX(-50px); 
+  animation: fadeInSlideLeft 1.2s ease-out forwards;
+}
+
+/* เมื่อหน้าจอมีขนาดเล็กกว่า 768px */
+@media screen and (max-width: 768px) {
+  .skills-container {
+    margin-top: 540px; /* เพิ่มระยะห่างจากด้านบน */
+    transform: translateX(0) translateY(20px); /* ขยับลงด้านล่าง */
+    opacity: 1; /* แสดงให้เห็น */
+  }
+}
+
+
+@keyframes fadeInSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+}
+
+
+
+
+
+
+
+
+.skill h1 {
+  font-size: 2rem; 
+  margin-bottom: 40px;
+  color: #000000;
+  font-weight: bold;
+  font-family: 'Tuffy', serif;
+  position: relative; 
+  left: 0px;
+  top: 50px}
+
+
+
+
+/* ตั้งค่าพื้นฐาน */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap; /* ช่วยให้สามารถจัดเรียงรูปภาพใหม่ได้เมื่อหน้าจอเล็กลง */
+  justify-content: space-between; /* จัดระยะห่างระหว่างรูป */
+  gap: 10px; /* ระยะห่างระหว่างรูปภาพ */
+  padding: 20px;
+  width: 100%; /* ปรับให้เต็มความกว้าง */
+}
+
+/* รูปภาพในแต่ละคอลัมน์ */
+.skill-grid img {
+  width: 100%; /* รูปภาพขนาดเต็มที่ของคอลัมน์ */
+  max-width: 250px; /* จำกัดขนาดสูงสุดของรูปภาพ */
+  height: auto; /* ปรับให้สูงตามอัตราส่วนของรูป */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px;
+  flex: 1 1 calc(33.333% - 10px); /* 3 รูปในแถวโดยมีระยะห่าง */
+}
+
+/* สำหรับหน้าจอที่กว้างกว่า 768px ให้แสดง 4 รูปในแถว */
+@media screen and (min-width: 768px) {
+  .skill-grid img {
+    flex: 1 1 calc(25% - 10px); /* กำหนดให้รูปภาพขยายเป็น 4 รูปในแถว */
+    max-width: 250px; /* ขนาดสูงสุดของรูปภาพ */
+  }
+}
+
+/* สำหรับหน้าจอที่กว้างกว่า 480px และน้อยกว่า 768px ให้แสดง 3 รูปในแถว */
+@media screen and (max-width: 767px) {
+  .skill-grid img {
+    flex: 1 1 calc(33.333% - 10px); /* กำหนดให้รูปภาพขยายเป็น 3 รูปในแถว */
+    max-width: 150px; /* ขนาดสูงสุดของรูปภาพ */
+  }
+}
+
+/* สำหรับหน้าจอที่เล็กกว่าหรือเท่ากับ 480px ให้แสดง 2 รูปในแถว */
+@media screen and (max-width: 480px) {
+  .skill-grid img {
+    flex: 1 1 calc(50% - 10px); /* 2 รูปในแถวสำหรับมือถือ */
+    max-width: 150px; /* ขนาดสูงสุดของรูปภาพ */
+  }
+}
+
+
+
+.skill-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.project {
+    margin-top: 100px;
+    padding: 100px 40px;
+    background-color: #DBB5B5;
+    font-size: 30px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    color: #333; 
+    font-weight: bold; 
+    font-family: 'Joan', sans-serif; 
+}
+
+
+
+.project img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 90px;
+  margin-top: 90px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.project img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
+.Certificates {
+    margin-top: 350px;
+    font-size: 30px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    color: #333; 
+    font-weight: bold; 
+    font-family: 'Poppins', sans-serif; 
+}   
+@media screen and (max-width: 768px) {
+  .Certificates {
+      margin-top: 100px; /* ลดระยะห่างจากด้านบน */
+      max-width: 450px; /* ลดขนาดสูงสุดของรูป */
+      margin-left: 50px;
+  }
+}
+.Certificates img {
+  width: 100%; /* รูปภาพจะยืดตามขนาดของ container */
+  margin-top: 500px; /* ระยะห่างจากด้านบน */
+  max-width: 550px; /* กำหนดขนาดสูงสุด */
+  height: auto; /* ให้ความสูงยืดตามอัตราส่วน */
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* สำหรับหน้าจอที่มีขนาดเล็กกว่า 768px (แท็บเล็ต) */
+@media screen and (max-width: 768px) {
+  .Certificates img {
+      margin-top: 100px; /* ลดระยะห่างจากด้านบน */
+      max-width: 450px; /* ลดขนาดสูงสุดของรูป */
+      margin-left: 0px;
+  }
+}
+
+/* สำหรับหน้าจอขนาดเล็กกว่า 480px (มือถือ) */
+@media screen and (max-width: 480px) {
+  .Certificates img {
+      margin-top: 100px; /* ลดระยะห่างจากด้านบน */
+      max-width: 100%; /* ให้รูปภาพเต็มขนาด container */
+      margin-left: 0px;
+  }
+}
+
+
+.Certificates img:hover {
+    transform: scale(1.10); 
+}
+.Certificates h1 {
+    font-family: 'Tuffy', serif;
+}
+     
+
+.contect1 {
+    position: relative;
+    text-align: center; 
+  }
+  
+  .contect1 img {
+    width: 100%; 
+    height: auto; 
+    max-width: 1200px; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 300px;
+  }
+  @media screen and (max-width: 768px) {
+    .contect1 img {
+        margin-top: 50px; /* ลดระยะห่างจากด้านบน */
+        max-width: 650px; /* ลดขนาดสูงสุดของรูป */
+        margin-left: 0px;
+    }
+  }
+  
+  /* สำหรับหน้าจอขนาดเล็กกว่า 480px (มือถือ) */
+  @media screen and (max-width: 480px) {
+    .contect1 img {
+        margin-top: 50px; /* ลดระยะห่างจากด้านบน */
+        max-width: 100%; /* ให้รูปภาพเต็มขนาด container */
+        margin-left: 0px;
+    }
+  }
+  
+  
+  .text-box {
+    position: absolute;
+    top: 75%; 
+    left: 23%;
+    transform: translate(20%, -50%);
+    background-color: rgba(175, 168, 168, 0); 
+    padding: 5px;
+    border-radius: 10px;
+    width: 40%; /* กำหนดความกว้างของกล่อง */
+}
+
+.text-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+/* ลดขนาด font เมื่อจอเล็กลง (เช่น แท็บเล็ต) */
+@media screen and (max-width: 768px) {
+.text-box input {
+  font-size: 10px;
+  padding: 8px;
+}
+}
+
+/* ลดขนาด font เพิ่มเติมสำหรับมือถือ */
+
+
+/* สำหรับหน้าจอที่มีขนาดเล็กกว่า 768px (แท็บเล็ต) */
+
+
+
+
+  
+/* ตั้งค่าเบื้องต้น */
+
+
+/* สำหรับหน้าจอที่เล็กกว่า 768px (แท็บเล็ตและมือถือ) */
+
+
+#input2 {
+  height: 45px; 
+  resize: vertical; 
+}
+
+#input1 {
+  height: 45px; 
+  resize: vertical; 
+}
+
+#input3 {
+  height: 130px; 
+  resize: vertical; 
+}
+
+
+/* สำหรับหน้าจอที่เล็กกว่า 768px (แท็บเล็ตและมือถือ) */
+@media screen and (max-width: 768px) {
+  #input2 {
+    
+    
+    height: 20px;  /* ลดความสูงของ input เมื่อหน้าจอเล็กลง */
+    margin-top: 10px;
+  }
+
+  #input1 {
+    height: 10px; 
+    margin-top: 50px; /* ลดความสูงของ input เมื่อหน้าจอเล็กลง */
+  }
+
+  #input3 {
+    height: 50px;
+    margin-top: 10px;  /* ลดความสูงของ input เมื่อหน้าจอเล็กลง */
+  }
+}
+
+/* สำหรับหน้าจอที่เล็กกว่า 480px (มือถือ) */
+@media screen and (max-width: 480px) {
+  #input1 {
+    margin-top: 0px;
+    height: 5px;  /* ลดความสูงของ input เมื่อหน้าจอเล็กลงมาก */
+  }
+
+  #input2 {
+    margin-top: 5px;
+    height: 15px;  /* ลดความสูงของ input เมื่อหน้าจอเล็กลงมาก */
+  }
+
+  #input3 {
+    margin-top: 5px;
+    height: 40px;  /* ลดความสูงของ input เมื่อหน้าจอเล็กลงมาก */
+  }
+}
+
+.send {
+  margin-top: 100px;
+  background-color: #8e8983;
+  color: #f7f7f7;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 999px; 
+  top: 250px;
+  margin-left: 0px;
+  margin-top: 40px;
+}
+
+/* สำหรับหน้าจอที่เล็กกว่า 768px (เช่น มือถือ) */
+@media screen and (max-width: 768px) {
+  .send {
+      font-size: 6px;  /* ลดขนาดตัวอักษร */
+      padding: 8px 16px;  /* ลดขนาด padding */
+      margin-top: 0px;  /* ลดระยะห่างด้านบน */
+      width: auto;  /* ให้ขนาดปุ่มปรับตัวตามเนื้อหาภายใน */
+  }
+}
+
+/* สำหรับหน้าจอที่เล็กกว่า 480px */
+@media screen and (max-width: 480px) {
+  .send {
+      font-size: 9px;  /* ลดขนาดตัวอักษรให้เล็กลง */
+      padding: 6px 12px;  /* ลดขนาด padding ให้น้อยลง */
+      margin-top: 10px;  /* ลดระยะห่างด้านบน */
+  }
+}
+
+
+#portfolio1 {
+    scroll-margin-top: 1000px; 
+  }
+
+  
+  .project2 {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    text-align: center;
+    background: #f9f9f9b3;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  .project2 h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Tuffy', serif;
+    margin-top: 50px;
+  }
+  
+  /* รูปภาพ */
+  .project2 .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .project2 .image-grid img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project2 .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    position: relative;
+    overflow: visible; 
+  }
+  
+  .project2 .image-grid img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    z-index: 1;     
+  }
+  
+  .project2 .image-grid img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+    z-index: 10;          
+  }
+  @media screen and (max-width: 768px) {
+    .project2 .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+      gap: 15px;
+      justify-items: center;
+      padding: 0 10px;
+    }
+  
+    .project2 .image-grid img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+  
+  
+  
+  
+
+  
+  
+  .project2 img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.0s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  @media screen and (max-width: 768px) {
+    .project2 img {
+      max-width: 90%;        /* ลดขนาดภาพลงจากขนาดเต็ม */
+      margin: 20px auto;     /* จัดให้อยู่ตรงกลาง */
+      display: block;        /* บังคับให้อยู่บรรทัดเดียว */
+    }
+  }
+  
+  
+  .project2 img.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Hover Effect */
+  .project2 img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* ปุ่ม */  
+  .project2 a:hover {
+    background-color: #ffffff;
+  }
+  /* คลาสเฉพาะรูปที่ต้องการให้เปลี่ยน */
+.hover-image {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.hover-image:hover::after {
+  opacity: 1;
+}
+/* คลาสสำหรับรูปภาพในส่วน intro */
+.image-profile {
+  position: absolute;  /* กำหนดให้รูปภาพลอย */
+  top: 20px; /* ปรับตำแหน่งจากด้านบน */
+  left: 20px; /* ปรับตำแหน่งจากด้านซ้าย */
+  width: 150px; /* กำหนดขนาดของรูปภาพ */
+  height: auto;
+}
+
+/* ถ้าต้องการให้ตำแหน่งของรูปภาพยืดหยุ่นขึ้น เมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+  .image-profile {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%); /* ทำให้รูปภาพอยู่กลาง */
+      width: 120px; /* ปรับขนาดรูปภาพให้เล็กลงเมื่อหน้าจอเล็ก */
+  }
+}
+
+  
+
+
+
+
+
+  
+  
+
+
+
+  
