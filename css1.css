@@ -288,7 +288,7 @@ nav h1 {
 /* ปรับขนาดตัวอักษรให้พอดีกับหน้าจอเล็กลง โดยไม่ใช้ margin-top เยอะ */
 @media screen and (max-width: 768px) {
   #typewriter .animated-title  {
-    font-size: clamp(40px, 6vw, 40px);
+    font-size: clamp(35px, 6vw, 40px);
     min-width: 180px;
 
   }
@@ -296,7 +296,7 @@ nav h1 {
 
 @media screen and (max-width: 480px) {
   #typewriter {
-    font-size: clamp(35px, 7vw, 35px);
+    font-size: clamp(32px, 7vw, 35px);
     min-width: 140px;
 
   }
@@ -385,8 +385,8 @@ main {
 
 @media screen and (max-width: 768px) {
   .intro img {
-    width: 120%;
-    margin-left: -30px;  
+    width: 110%;
+    margin-left: -150px;  
     margin-right: auto;
     float: none;
     margin-top: 120px;
@@ -420,7 +420,8 @@ main {
 
 @media screen and (max-width: 768px) {
   .intro {
-    left: 100px; 
+    left: 20px; 
+    max-width: 300px;
   }
 }
 
@@ -455,15 +456,16 @@ main {
 }
 @media screen and (max-width: 768px) {
   .intro h1 {
-    font-size: 20px;  
-    margin-top: 500px; 
+    font-size: 10px;  
+    margin-top: 620px; 
+    margin-left: -20px;
   }
 }
 
 .intro p {
-    font-size: 30px;
+    font-size: 15px;
     margin: 10px 0;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 @media screen and (max-width: 768px) {
   .intro p {
@@ -560,16 +562,16 @@ main {
 @media screen and (max-width: 768px) {
   .icon-container {
     flex-direction: row; /* จัดเรียงแนวนอน */
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap; /* ให้ wrap ถ้าแน่นเกิน */
+    margin-left: 0px;
   }
 
   .icon-container img {
     width: 30px;
     height: 30px;
     margin: 0px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
@@ -637,7 +639,7 @@ main {
 @media (max-width: 768px) {
   .cascadia-mono {
     margin-top: -500px; /* ลดการเลื่อนขึ้นให้น้อยลงจาก -500px */
-    font-size: clamp(0.8rem, 3vw, 1.2rem); /* ฟอนต์เล็กลงตามขนาดหน้าจอ */
+    font-size: clamp(0.8rem, 3vw, 1.0rem); /* ฟอนต์เล็กลงตามขนาดหน้าจอ */
   }
 }
 
@@ -645,7 +647,7 @@ main {
 @media (max-width: 480px) {
   .cascadia-mono {
     margin-top: -500px;
-    font-size: clamp(0.7rem, 4vw, 1rem);
+    font-size: clamp(0.7rem, 4vw, 0.5rem);
   }
 }
 
@@ -697,11 +699,11 @@ main {
 @media (max-width: 768px) {
   .skills {
     padding: 0px 0px;
-    font-size: 14px;
+    font-size: 10px;
     margin-top: 900px;  
-    margin-left: 20px; 
-    width: 450px;  
-    height: auto;  
+    margin-left: 0px; 
+    width: auto;  
+    height: 450px;  
   }
 }
 
@@ -1203,7 +1205,7 @@ nav ul li a:hover {
 }
 .Certificates img {
   width: 100%; 
-  margin-top: 250px; 
+  margin-top: 100px; 
   max-width: 550px; 
   height: auto; 
   margin: 0px;
@@ -1215,7 +1217,7 @@ nav ul li a:hover {
 /* สำหรับหน้าจอที่มีขนาดเล็กกว่า 768px (แท็บเล็ต) */
 @media screen and (max-width: 768px) {
   .Certificates img {
-      margin-top: 80px; 
+      margin-top: 50px; 
       max-width: 450px; 
       margin-left: 0px;
   }
@@ -1224,7 +1226,7 @@ nav ul li a:hover {
 
 @media screen and (max-width: 480px) {
   .Certificates img {
-      margin-top: 100px; 
+      margin-top: 20px; 
       max-width: 70%; 
       margin-left: 0px;
   }
