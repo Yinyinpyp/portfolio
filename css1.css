@@ -12,6 +12,16 @@ html, body {
 }
 
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
   
@@ -1210,7 +1220,7 @@ nav ul li a:hover {
   .Certificates {
       margin-top: 100px; 
       max-width: 450px; 
-      margin-left: 50px;
+      margin-left: 0px;
       font-size: 25px;
   }
 }
