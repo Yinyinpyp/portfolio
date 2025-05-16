@@ -395,11 +395,11 @@ main {
 
 @media screen and (max-width: 768px) {
   .intro img {
-    width: 110%;
+    width: 100%;
     margin-left: -150px;  
     margin-right: auto;
     float: none;
-    margin-top: 120px;
+    margin-top: 150px;
     
   }
 }
@@ -775,30 +775,30 @@ main {
 .contact-info div {
     margin: 0 15px; 
     flex: 1 1 auto; /* ให้ขนาดปรับตามพื้นที่ */
-    min-width: 100px; /* ป้องกันการบีบตัวมากเกินไป */
+    min-width: 0px; /* ป้องกันการบีบตัวมากเกินไป */
 }
 
 /* ปรับการแสดงผลเมื่อหน้าจอเล็กกว่า 600px */
 @media (max-width: 600px) {
   .contact-info {
       flex-direction: row; /* จัดเรียงแนวตั้งจริง ๆ ตามคอมเมนต์ */
-      padding: 8px 0; /* ลด padding */
+      padding: 0px 0; /* ลด padding */
   }
 
   .contact-info div {
-      margin: 3px 0; /* ลดระยะห่าง */
+      margin: 0px 0; /* ลดระยะห่าง */
       font-size: 8px; /* ลดขนาดตัวอักษร */
   }
 }
 
 @media (max-width: 400px) {
   .contact-info {
-      padding: 5px 0;
+      padding: 0px 0;
   }
 
   .contact-info div {
       font-size: 5px;
-      margin: 2px 0;
+      margin: 0px 0;
   }
 }
 
@@ -934,7 +934,7 @@ nav ul li a:hover {
   }
 
   .Service img {
-    max-width: 80px;       
+    max-width: 140px;       
     margin-top: 20px;       
   }
 }
