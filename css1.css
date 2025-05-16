@@ -135,7 +135,7 @@ body {
     width: 100%;
     background-color: #aa7b7b;
     z-index: 1000;
-    font-size: 30px;
+    font-size:20px;
     padding: 10px 20px;
     color: #ffffff;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -146,9 +146,8 @@ nav h1 {
   right: 300px;            
   color: #f0f0f0;
   font-size: 30px;
-  margin-left: 500px;      
+  margin-left: 0px;      
   padding-left: 0;
-  text-align: left;
 }
 /* เริ่มต้นซ่อน <h1> สำหรับขนาดหน้าจอเล็ก */
 nav h1 {
@@ -160,80 +159,97 @@ nav h1 {
 }
 
 /* ซ่อน <h1> เมื่อหน้าจอเล็กลง */
-@media screen and (max-width: 768px) {
-  nav h1 {
-    display: none; 
-  }
-}
-
-nav.scrolled {
-    background-color: white;
-    color: #000000;
-}
-
-
-nav a {
-  font-family: 'Tuffy', serif;
-  font-size: 20px;
-  color: #f0f0f0;
-  margin-left: 10px; 
-}
-
-/* กำหนดรูปแบบพื้นฐานสำหรับ ul */
-ul {
+/* Layout ปกติ */
+.navbar {
   display: flex;
-  justify-content: flex-start;  
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  overflow-x: hidden; 
-  max-width: 100%;  
+  justify-content: space-between;
+  align-items: center;
+  background: #aa7b7b;
+  padding: 10px 20px;
+  color: #fff;
 }
-
-/* กำหนดรูปแบบสำหรับ li */
-li {
-  margin: 0 10px;
-  transition: margin-left 0.3s ease; 
-  z-index: 10; 
-}
-
-/* เมื่อหน้าจอเล็กลง (ไม่เกิน 768px) */
-@media screen and (max-width: 768px) {
-  ul {
-    margin-left: 0px;
-    padding-left: 150px;  
-  }
-
-  li {
-    margin-left: -10px; 
-  }
-}
-
-/* เมื่อหน้าจอเล็กลงมาก (ไม่เกิน 480px) */
-@media screen and (max-width: 480px) {
-  ul {
-    justify-content: flex-start; 
-    padding-left: -50px;  
-  }
-  li {
-    margin-left: -50px; 
-  }
-  a {
-    margin-left: 50px; 
-  }
-}
-
-/* รูปแบบพื้นฐานสำหรับ a */
-a {
+.nav-link {
+  color: white;
   text-decoration: none;
-  white-space: nowrap; 
+  transition: color 0.3s ease;
+  padding: 5px 10px;
 }
 
-/* รูปแบบสำหรับ a เมื่อ hover */
-a:hover {
-  background-color: #f0f0f0; 
+.nav-link.active {
+  color: black; /* สีที่เปลี่ยนตอน active */
+  font-weight: bold;
 }
 
+
+@media screen and (min-width: 768px) {
+  .navbar.scrolled {
+    background: #fff;
+    color: #aa7b7b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.scrolled a {
+    color: #aa7b7b;
+  }
+}
+
+/* ปรับสีลิงก์ปกติ (จอเล็กหรือยังไม่ scroll) */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ปิดแถบเมนูไว้ในมือถือ */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #aa7b7b;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
 
 
 
@@ -263,17 +279,17 @@ a:hover {
 /* ปรับขนาดตัวอักษรให้พอดีกับหน้าจอเล็กลง โดยไม่ใช้ margin-top เยอะ */
 @media screen and (max-width: 768px) {
   #typewriter .animated-title  {
-    font-size: clamp(15px, 6vw, 40px);
+    font-size: clamp(18px, 6vw, 40px);
     min-width: 180px;
-    margin-top: 100px; 
+
   }
 }
 
 @media screen and (max-width: 480px) {
   #typewriter {
-    font-size: clamp(11px, 7vw, 35px);
+    font-size: clamp(15px, 7vw, 35px);
     min-width: 140px;
-    margin-top: 80px; 
+
   }
 }
 
@@ -361,9 +377,10 @@ main {
 @media screen and (max-width: 768px) {
   .intro img {
     width: 120%;
-    margin-left: -100px;  
+    margin-left: -30px;  
     margin-right: auto;
     float: none;
+    margin-top: 120px;
     
   }
 }
@@ -430,7 +447,7 @@ main {
 @media screen and (max-width: 768px) {
   .intro h1 {
     font-size: 20px;  
-    margin-top: 700px; 
+    margin-top: 500px; 
   }
 }
 
@@ -561,20 +578,6 @@ main {
   font-weight: bold;
 }
 
-/* สำหรับหน้าจอขนาดเล็ก (มือถือ) */
-@media screen and (max-width: 768px) {
-  .nav-link {
-    font-size: 22px;  
-    margin-left: -10px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .nav-link {
-    font-size: 18px; 
-    margin-left: 50px; 
-  }
-}
 
 
 
@@ -667,8 +670,8 @@ main {
     font-size: 14px;
     margin-top: 1150px;  
     margin-left: 20px; 
-    width: 100%;  
-    height: 70%;  
+    width: 150%;  
+    height: 100%;  
   }
 }
 
@@ -703,25 +706,55 @@ main {
     font-size: 1.1em;
   }
   .contact-info {
-    bottom: 0; 
-    left: 0; 
-    width: 100%; 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    background-color: #fff; 
-    padding: 10px 0; 
+    /* position: fixed; ❌ ลบออก */
+    /* bottom: 0; ❌ ลบออก */
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
+    z-index: 1000;
+    flex-wrap: wrap;
 }
-
 
 
 .contact-info div {
     margin: 0 15px; 
+    flex: 1 1 auto; /* ให้ขนาดปรับตามพื้นที่ */
+    min-width: 100px; /* ป้องกันการบีบตัวมากเกินไป */
 }
+
+/* ปรับการแสดงผลเมื่อหน้าจอเล็กกว่า 600px */
+@media (max-width: 600px) {
+  .contact-info {
+      flex-direction: row; /* จัดเรียงแนวตั้งจริง ๆ ตามคอมเมนต์ */
+      padding: 8px 0; /* ลด padding */
+  }
+
+  .contact-info div {
+      margin: 3px 0; /* ลดระยะห่าง */
+      font-size: 8px; /* ลดขนาดตัวอักษร */
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-info {
+      padding: 5px 0;
+  }
+
+  .contact-info div {
+      font-size: 8px;
+      margin: 2px 0;
+  }
+}
+
+
+
 
 
 nav ul {
@@ -781,13 +814,15 @@ nav ul li {
 
 @media screen and (max-width: 480px) {
   nav ul li {
+    
     margin: 0 20px; 
   }
 }
 
 
+
 nav.scrolled ul li a {
-  color: #aa7b7b; 
+  color: #fffdfd; 
 }
 
 
@@ -1032,7 +1067,7 @@ nav ul li a:hover {
 @media screen and (max-width: 480px) {
   .skill-grid img {
     flex: 1 1 calc(50% - 10px); 
-    max-width: 150px; 
+    max-width: 40%; 
   }
 }
 
@@ -1130,7 +1165,7 @@ nav ul li a:hover {
 @media screen and (max-width: 480px) {
   .Certificates img {
       margin-top: 100px; 
-      max-width: 100%; 
+      max-width: 70%; 
       margin-left: 0px;
   }
 }
@@ -1364,10 +1399,11 @@ nav ul li a:hover {
   @media screen and (max-width: 768px) {
     .project2 .image-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 2 คอลัมน์ */
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+      gap: 20px;
       justify-items: center;
-      padding: 0 10px;
+      padding: 0px 10px;
+      margin-left: 10px;
     }
   
     .project2 .image-grid img {
