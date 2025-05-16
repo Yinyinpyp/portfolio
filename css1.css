@@ -13,28 +13,7 @@ html, body {
 
 
 
-body {
-  background-color: #ffffff;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-  opacity: 0;
-  animation: fadeInBody 1s ease-in-out forwards;
-}
 
-@keyframes fadeInBody {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeInBody {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
   
 
 html {
@@ -447,7 +426,7 @@ main {
 
 @media screen and (max-width: 480px) {
   .intro {
-    left: 20px; 
+    left: 50px; 
   }
 }
 
@@ -488,7 +467,7 @@ main {
 }
 @media screen and (max-width: 768px) {
   .intro p {
-    font-size: 20px;  
+    font-size: 18px;  
 
   }
 }
@@ -578,35 +557,24 @@ main {
   transform: scale(1.1);
 }
 
-
-@media screen and (max-width: 50px) {
+@media screen and (max-width: 768px) {
   .icon-container {
-    justify-content: center; 
+    flex-direction: row; /* จัดเรียงแนวนอน */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* ให้ wrap ถ้าแน่นเกิน */
   }
 
   .icon-container img {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    margin-top: 20px;
   }
 }
 
 
-  .icon-container1 img {
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    margin-top: 15px;
-    padding: 0;
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
-    border-radius: 8px; 
-    transition: box-shadow 0.3s ease;
 
-    position: relative;
-    z-index: 10;
-
-  }
   
 
   
@@ -656,20 +624,28 @@ main {
 
 
 .cascadia-mono {
-  
   font-family: 'Tuffy', serif, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-optical-sizing: auto;
   margin-left: 10px;
-  transition: margin-top 0.3s ease; 
+  transition: margin-top 0.3s ease, font-size 0.3s ease;
+  font-size: clamp(1rem, 2vw, 1.5rem); /* ฟอนต์ขนาดเริ่มต้น ปรับตาม vw */
 }
 
-/* เมื่อหน้าจอเล็กลง (เช่น สูงสุดที่ 768px) ให้ขยับข้อความขึ้น */
+/* เมื่อหน้าจอเล็กลง (สูงสุด 768px) ให้ขยับข้อความขึ้นและปรับขนาดฟอนต์ */
 @media (max-width: 768px) {
   .cascadia-mono {
-      margin-top: -500px;
-      font-size: 10px; /* ปรับขนาดฟอนต์ให้เล็กลงเมื่อหน้าจอแคบ */
+    margin-top: -500px; /* ลดการเลื่อนขึ้นให้น้อยลงจาก -500px */
+    font-size: clamp(0.8rem, 3vw, 1.2rem); /* ฟอนต์เล็กลงตามขนาดหน้าจอ */
+  }
+}
+
+/* สำหรับหน้าจอเล็กลงอีก (สูงสุด 480px) */
+@media (max-width: 480px) {
+  .cascadia-mono {
+    margin-top: -500px;
+    font-size: clamp(0.7rem, 4vw, 1rem);
   }
 }
 
@@ -722,10 +698,10 @@ main {
   .skills {
     padding: 0px 0px;
     font-size: 14px;
-    margin-top: 950px;  
+    margin-top: 900px;  
     margin-left: 20px; 
     width: 450px;  
-    height: 400px;  
+    height: auto;  
   }
 }
 
@@ -802,7 +778,7 @@ main {
   }
 
   .contact-info div {
-      font-size: 8px;
+      font-size: 5px;
       margin: 2px 0;
   }
 }
@@ -939,7 +915,7 @@ nav ul li a:hover {
   }
 
   .Service img {
-    max-width: 150px;       
+    max-width: 80px;       
     margin-top: 20px;       
   }
 }
@@ -1018,12 +994,14 @@ nav ul li a:hover {
 }
 @media screen and (max-width: 768px) {
   .skill {
-    width: 90%;         
-    height: auto;       
+    width: 100%;         /* ให้เต็มความกว้างของ container */
+    height: auto;        /* ปรับเป็น auto ดีกว่าถ้าไม่ต้องการบังคับสูงเต็ม */
     padding: 15px;
     margin-top: 40px;
+    box-sizing: border-box; /* ให้ padding ไม่ทำให้ขนาดเกิน width */
   }
 }
+
 
 
 
@@ -1045,6 +1023,7 @@ nav ul li a:hover {
     margin-top: 540px; 
     transform: translateX(0) translateY(20px); 
     opacity: 1; 
+    width: 100%;
   }
 }
 
@@ -1082,7 +1061,7 @@ nav ul li a:hover {
 /* เมื่อหน้าจอกว้างไม่เกิน 480px */
 @media (max-width: 480px) {
   .animated-text p{
-    font-size: 10px;
+    font-size: 8px;
   }
 }
 
@@ -1219,15 +1198,15 @@ nav ul li a:hover {
       margin-top: 100px; 
       max-width: 450px; 
       margin-left: 50px;
-      font-size: 30px;
+      font-size: 25px;
   }
 }
 .Certificates img {
   width: 100%; 
-  margin-top: 500px; 
+  margin-top: 250px; 
   max-width: 550px; 
   height: auto; 
-  margin: 10px;
+  margin: 0px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
